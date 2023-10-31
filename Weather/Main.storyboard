@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,12 +17,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQd-6B-ZPo">
-                                <rect key="frame" x="146.66666666666666" y="103" width="100" height="32"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <rect key="frame" x="145" y="103" width="103" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="m7v-K1-5BU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngegg" translatesAutoresizingMaskIntoConstraints="NO" id="m7v-K1-5BU">
                                 <rect key="frame" x="121.66666666666669" y="170" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="bFi-Sc-kfS"/>
@@ -35,20 +34,38 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Get weather"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66I-eL-3AP">
+                                <rect key="frame" x="137.33333333333334" y="466" width="118.66666666666666" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm3-yb-eJs">
+                                <rect key="frame" x="196.66666666666666" y="497" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GQd-6B-ZPo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="8iF-1t-n58"/>
                             <constraint firstItem="af7-jS-aCJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9BN-NJ-sKx"/>
+                            <constraint firstItem="Xm3-yb-eJs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="A0e-xn-bxQ"/>
                             <constraint firstItem="m7v-K1-5BU" firstAttribute="top" secondItem="GQd-6B-ZPo" secondAttribute="bottom" constant="35" id="Bv0-9i-lQv"/>
+                            <constraint firstItem="66I-eL-3AP" firstAttribute="top" secondItem="af7-jS-aCJ" secondAttribute="bottom" constant="59" id="Nsv-71-uye"/>
                             <constraint firstItem="GQd-6B-ZPo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="c2d-UY-PnA"/>
                             <constraint firstItem="af7-jS-aCJ" firstAttribute="top" secondItem="m7v-K1-5BU" secondAttribute="bottom" constant="52" id="hf0-8K-qrc"/>
                             <constraint firstItem="m7v-K1-5BU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="i6v-dg-Ko3"/>
+                            <constraint firstItem="Xm3-yb-eJs" firstAttribute="top" secondItem="66I-eL-3AP" secondAttribute="bottom" constant="8" symbolic="YES" id="xbU-Ja-fnz"/>
+                            <constraint firstItem="66I-eL-3AP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yhz-8Q-8FY"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="getWeatherButton" destination="af7-jS-aCJ" id="tFO-7n-eFO"/>
+                        <outlet property="temperatureLabel" destination="66I-eL-3AP" id="PBH-jD-ZdT"/>
+                        <outlet property="temperatureValue" destination="Xm3-yb-eJs" id="NT9-no-mKt"/>
                         <outlet property="weatherLabel" destination="GQd-6B-ZPo" id="GLv-k7-ieo"/>
                     </connections>
                 </viewController>
@@ -58,7 +75,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon" width="1024" height="1024"/>
+        <image name="pngegg" width="514" height="514"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
